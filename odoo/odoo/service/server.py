@@ -164,6 +164,7 @@ class ThreadedWSGIServerReloadable(LoggingBaseWSGIServerMixIn, werkzeug.serving.
             self.reload_socket = False
             super(ThreadedWSGIServerReloadable, self).server_bind()
             _logger.info('HTTP service (werkzeug) running on %s:%s', self.server_name, self.server_port)
+            _logger.info('[WEB INTERFACE AVAILABLE AT http://localhost:%s]', self.server_port)
 
     def server_activate(self):
         if not self.reload_socket:
@@ -871,6 +872,7 @@ class PreforkServer(CommonServer):
         if config['http_enable']:
             # listen to socket
             _logger.info('HTTP service (werkzeug) running on %s:%s', self.interface, self.port)
+            _logger.info('[WEB INTERFACE AVAILABLE AT http://localhost:%s]', self.port)
             self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             self.socket.setblocking(0)

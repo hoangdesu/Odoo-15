@@ -1,20 +1,19 @@
 # -*- coding: utf-8 -*-
 
-
-
 {
-    'name': 'Sales',
-    'version': '1.2',
-    'category': '',
-    'summary': '',
-    'description': """
-    """,
+    'name': 'Hospital Management',
+    'version': '1.0.0',
+    'category': 'Hospital',
+    'author': 'Hoang Nguyen<hoangdesu@gmail.com>',
+    'summary': 'Hospital management system summary',
+    'description': 'Hospital management description',
+    'sequence': -100,
     'depends': [],
     'data': [],
     'demo': [],
+    'application': True,
     'installable': True,
     'auto_install': False,
     'assets': {},
-    'post_init_hook': '_synchronize_cron',
     'license': 'LGPL-3',
 }
